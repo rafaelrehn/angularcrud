@@ -1,0 +1,23 @@
+@import 'colors';
+
+table {    
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, table th {
+    border: 1px solid white;
+    padding: 8px;
+}
+
+table tr:nth-child(even){background-color: white;}
+
+table tr:hover {background-color: $color5;}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $color2;
+    color: white;
+}

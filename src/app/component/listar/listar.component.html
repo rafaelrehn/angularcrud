@@ -1,0 +1,48 @@
+<h5>Dashboard > Items > Listar</h5>
+<h3>Lista de items: {{ itemCount }} registro(s).</h3>
+<div id="addButton">
+	<span class="fa fa-plus"></span>
+</div>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Nome</th>
+		<th>U.M.</th>
+		<th>Valor</th>
+		<th>Perecível</th>
+		<th>Data val.</th>
+		<th>Data fab.</th>
+		<th>Ações</th>
+	</tr>
+	<tr *ngFor="let item of items">
+		<td>
+			{{item.id}}
+		</td>
+		<td>
+			{{item.nome}}
+		</td>
+		<td>
+			{{item.um}}
+		</td>
+		<td>
+			{{item.valor | number:'1.0-2'}}
+		</td>
+		<td>
+		  <span 
+		    *ngIf="item.perecivel != null"
+		    [style.color]="item.perecivel == 'Sim' ? 'red' : 'green' ">
+		      {{item.perecivel}}
+		  </span>
+		</td>
+		<td>
+			{{item.val}}
+		</td>
+		<td>
+			{{item.fab}}
+		</td>
+		<td>
+			<button class="btn btn-danger">Editar</button>
+			<button class="btn btn-danger">Excluir</button>
+		</td>
+	</tr>
+</table>
