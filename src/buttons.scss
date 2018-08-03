@@ -3,8 +3,12 @@
 .btn{
 	border: 0;
 	border-radius: 5px;
-	padding: 0.7em 2em;	
+	padding-top: 0.7em;
+	min-width: 90px;
+	padding-bottom: 0.7em;	
 	color: white;
+	opacity: 0.7;
+	text-align: center;
 
 	&:hover{
 		cursor:pointer;
@@ -13,24 +17,40 @@
 .btn-default{
 	background: $color4;
 
+	&:hover{		
+		opacity: 1;
+	}
+}
+.btn-primary{
+	background: $color2;
+
 	&:hover{
-		background: $color2;
+		
+		opacity: 1;
 	}
 }
 .btn-warning{
 	background: orange;
 	
 	&:hover{
-		 opacity: .8;
+		 opacity: 1;
 	}
 }
 .btn-success{
 	background: green;
 	
 	&:hover{
-		 opacity: .8;
+		 opacity: 1;
 	}
 }
+.btn-danger{
+	background: red;
+	
+	&:hover{
+		 opacity: 1;
+	}
+}
+
 .btn-block{
 	width: 100%;
 }

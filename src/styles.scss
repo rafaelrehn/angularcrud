@@ -59,7 +59,7 @@ body, html{
 	height: 100%;	
 	top: 0%;
 	left: 0%;
-
+	box-shadow: 2px 2px 4px rgba(0,0,0,.3);
 	ul{
 		margin-top: 0;
 		list-style: none;
@@ -92,7 +92,7 @@ body, html{
 
 
 .content{
-	margin-top: 75px;
+	margin-top: 80px;
 	padding-right: 20px;
 	margin-left: 220px;
 	h5{

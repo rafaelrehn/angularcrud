@@ -22,6 +22,12 @@ export class AdicionarComponent implements OnInit {
   items = ITEMS;
   nome: string;
 
+  /* variaveis teste */
+  val: number;
+  fab: string;
+  valor: number;
+  qtd: number;
+
   /* select unidade de medida */
   listaPer: SelectItem[];
   selectedListaPer: per;
@@ -91,13 +97,14 @@ export class AdicionarComponent implements OnInit {
       this.stepvalue = 1;
       this.varUm=novovalor.value;
       //console.log(novovalor.value);
-    }    
-    document.getElementById('inputQtd').value = '';
+    }
+    this.qtd = null;
   }
-
+  /*
   verificaForm(valor){
     if(valor.value > this.maxvalue){
       window.alert
     }  
   }
+  */
 }
