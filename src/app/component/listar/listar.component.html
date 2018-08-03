@@ -1,9 +1,9 @@
 <h5>Dashboard > Items > Listar</h5>
 <h3>Lista de items: {{ itemCount }} registro(s).</h3>
-<div id="addButton">
+<div id="addButton" routerLink="/adicionar-item">
 	<span class="fa fa-plus"></span>
 </div>
-<table>
+<table class="table">
 	<tr>
 		<th>ID</th>
 		<th>Nome</th>
@@ -41,8 +41,8 @@
 			{{item.fab}}
 		</td>
 		<td>
-			<button class="btn btn-danger">Editar</button>
-			<button class="btn btn-danger">Excluir</button>
+			<button class="btn btn-default">Editar</button>
+			<button class="btn btn-default">Excluir</button>
 		</td>
 	</tr>
 </table>

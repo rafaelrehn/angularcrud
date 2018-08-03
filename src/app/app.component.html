@@ -1,8 +1,8 @@
 <div class="sidebar">
   <ul>
     <li routerLink="/dashboard" routerLinkActive="active"><span class="fa fa-dashboard"></span> Dashboard</li>
-    <li routerLink="listar-item" routerLinkActive="active"><span class="fa fa-server"></span> Listar Items</li>
-    <li routerLink="adicionar-item" routerLinkActive="active"><span class="fa fa-edit"></span> Editar Items</li>
+    <li routerLink="editar-item" routerLinkActive="active"><span class="fa fa-server"></span> Listar Itens</li>
+    <li routerLink="adicionar-item" routerLinkActive="active"><span class="fa fa-edit"></span> Editar Itens</li>
     <li><span class="fa fa-exclamation-triangle"></span> Notworking</li>
     <li><span class="fa fa-exclamation-triangle"></span> Notworking</li>
     <li><span class="fa fa-exclamation-triangle"></span> Notworking</li>
@@ -14,5 +14,7 @@
   <h1>< Angular<span>FrontEND </span>/></h1>
 </div>
 <div class="content">
-<router-outlet></router-outlet>
+  <div class="mascara">
+    <router-outlet></router-outlet>
+  </div>
 </div>

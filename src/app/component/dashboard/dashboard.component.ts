@@ -12,10 +12,4 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  @HostBinding('class.isActive')isActive:boolean;
-
-  click(){
-    this.isActive =! this.isActive;
-  }
-
 }

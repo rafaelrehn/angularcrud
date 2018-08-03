@@ -95,7 +95,13 @@ body, html{
 	margin-top: 75px;
 	padding-right: 20px;
 	margin-left: 220px;
-
+	h5{
+		margin-top: 0px;
+		color: $color3;
+	}
+	.mascara{
+		background-color: white; min-height: 100%; padding: 2em; border-radius: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	}
 }
 
 #addButton{
@@ -113,6 +119,7 @@ body, html{
 	right: 5%;	
 	transition: all .3s;
 	overflow: hidden;
+	cursor: pointer;
 	.fa{
 		margin-top: 15px;
 	}
@@ -120,5 +127,6 @@ body, html{
 		background: $color1;
 		color: $green;
 		/* transform: scale(1.1); */
+
 	}
 }

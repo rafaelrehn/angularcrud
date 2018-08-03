@@ -1,3 +1,78 @@
-<p>
-  adicionar works!
-</p>
+<h5>Dashboard > Items > Editar</h5>
+
+<h2>Registro <strong>{{nome}}</strong></h2>
+    
+<div class="ui-md-8 ui-sm-12 ui-g-nopad">
+	<div class="ui-g">
+		<div class="ui-g-12 ui-md-4">
+    		<label>Nome do item:</label>
+	    </div>
+
+	    <div class="ui-g-12 ui-md-8 ui-fluid">
+	    	<input type="text" pInputText [(ngModel)]="nome"/>
+	    </div>
+	</div>
+	<div class="ui-g">
+		<div class="ui-g-12 ui-md-4">
+			<label>Selecione unidade de medida:</label>
+	    </div>
+	    <div class="ui-g-12 ui-md-8 ui-fluid">
+	    	<p-dropdown [options]="listaUm" [(ngModel)]="selectedListaUm" (onChange)="parametroUm($event)" [style]="{'width': '100%'}" ></p-dropdown>
+	    </div>
+	</div>
+	<div class="ui-g">
+		<div class="ui-g-12 ui-md-4">
+			<label>Quantidade:</label>
+	    </div>
+	    <div class="ui-g-12 ui-md-8 ui-fluid">
+	    	<input id="inputQtd" pInputText currencyMask [(ngModel)]="qtd" [options]="{precision : 3,prefix: '' , suffix: ' '+[(varUm)], thousands: '.', decimal: ',' , align: 'left' }" /> 
+	    	
+	    </div>
+	</div>
+	<div class="ui-g">
+		<div class="ui-g-12 ui-md-4">
+			<label>Valor:</label>
+	    </div>
+	    <div class="ui-g-12 ui-md-8 ui-fluid">
+	    	<input  pInputText currencyMask [(ngModel)]="valor" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' , align: 'left' }" />
+	    </div>
+	</div>
+	<div class="ui-g">
+	    <div class="ui-g-12 ui-md-4">
+			<label>Perecível:</label>
+	    </div>
+	    <div class="ui-g-12 ui-md-8 ui-fluid">
+	    	<p-dropdown [options]="listaPer" [(ngModel)]="selectedListaPer" [style]="{'width': '100%'}" ></p-dropdown>
+	    </div>
+	</div>
+	<div class="ui-g">
+	    <div class="ui-g-12 ui-md-4">
+			<label>Data de Validade:</label>
+	    </div>
+	    <div class="ui-g-12 ui-md-8 ui-fluid">
+	    	<p-calendar [(ngModel)]="val" [showIcon]="true" dateFormat="dd/mm/yy" [locale]="pt"></p-calendar>
+	    </div>
+	</div>
+	<div class="ui-g">
+	    <div class="ui-g-12 ui-md-4">
+			<label>Data de vencimento:</label>
+	    </div>
+	    <div class="ui-g-12 ui-md-8 ui-fluid">
+	    	<p-calendar [(ngModel)]="fab" [showIcon]="true" dateFormat="dd/mm/yy" [locale]="pt"></p-calendar>
+	    </div>
+	</div>
+	<br><br>
+	<div class="ui-g">
+		<div class="ui-g-12 ui-md-5">
+	    </div>
+	    <div class="ui-g-12 ui-md-3">
+			<button class="btn btn-warning btn-block btn-2x">Cancelar</button>
+			
+	    </div>
+	    <div class="ui-g-12 ui-md-1">
+	    </div>
+	    <div class="ui-g-12 ui-md-3">
+	    	<button class="btn btn-success btn-block btn-2x">Registrar</button>
+	    </div>
+	</div>
+</div>

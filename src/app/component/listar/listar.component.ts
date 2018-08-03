@@ -1,4 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { Item } from '../../item';
+import { ITEMS } from '../../lista-items';
 
 @Component({
   selector: 'app-listar',
@@ -8,38 +10,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 export class ListarComponent implements OnInit {
 
   itemCount: number;
-  items = [
-  	{id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Sim', val:'17/09/2018', fab: '22/07/2018'},
-  	{id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Sim', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Sim', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Sim', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'},
-    {id:1,nome:'Banana', um:'Kg', qtd:32, valor: 17.43, perecivel: 'Não', val:'17/09/2018', fab: '22/07/2018'}
-
-  	
-  ];
+  items = ITEMS;
 
   constructor() { }
 

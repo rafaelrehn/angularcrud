@@ -7,9 +7,10 @@ import { AdicionarComponent } from './component/adicionar/adicionar.component'; 
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-	{ path: 'listar-item', component: ListarComponent},
+	{ path: 'editar-item', component: ListarComponent},
 	{ path: 'adicionar-item', component: AdicionarComponent},
 	{ path: 'dashboard', component: DashboardComponent},
+	{ path: 'editar-item/:id', component: AdicionarComponent },
 ];
 
 
