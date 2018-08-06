@@ -131,6 +131,10 @@ MIT
 MIT
 MIT
 
+@angular/animations@5.2.11
+MIT
+MIT
+
 css-loader@0.28.11
 MIT
 Copyright JS Foundation and other contributors
@@ -155,10 +159,6 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 @angular/router@5.2.11
-MIT
-MIT
-
-@angular/animations@5.2.11
 MIT
 MIT
 
