@@ -7,10 +7,10 @@ import { AdicionarComponent } from './component/adicionar/adicionar.component'; 
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-	{ path: 'listar-item', component: ListarComponent},
-	{ path: 'adicionar-item', component: AdicionarComponent},
-	{ path: 'dashboard', component: DashboardComponent},
-	{ path: 'adicionar-item/:id', component: AdicionarComponent },
+	{ path: 'listar-item', component: ListarComponent, data: { state: 'listar-item' }},
+	{ path: 'adicionar-item', component: AdicionarComponent, data: { state: 'adicionar-item' }},
+	{ path: 'dashboard', component: DashboardComponent, data: { state: 'dashboard' }},
+	{ path: 'adicionar-item/:id', component: AdicionarComponent, data: { state: 'adicionar-item' } },
 ];
 
 

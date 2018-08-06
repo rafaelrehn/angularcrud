@@ -6,7 +6,7 @@ import { DataService } from '../../data.service';
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
-  styleUrls: ['./listar.component.scss']
+  styleUrls: ['./listar.component.scss']    
 })
 export class ListarComponent implements OnInit {
   items: Item[];

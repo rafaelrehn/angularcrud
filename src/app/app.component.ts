@@ -1,19 +1,58 @@
 import { Component } from '@angular/core';
+import { trigger, style, animate, transition, query, group, state,stagger } from '@angular/animations'; //animations
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-})
+  styleUrls: ['./app.component.scss'],
+  /*animations: [
+    trigger('routeAnimation', [
+      transition('* <=> *', [        
+        query(':enter, :leave', style({ position: 'fixed', width:'100%' }), { optional: true }),        
+        group([  
+          query(':enter', [
+            style({ transform: 'translateX(100%)' }),
+            animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
+          ], { optional: true }),
+          query(':leave', [
+            style({ transform: 'translateX(0%)' }),
+            animate('0.5s ease-in-out', style({ transform: 'translateX(200%)' }
+          ], { optional: true })
+        ])
+      ])     
+    ])
+  ]*/
+animations: [
+    trigger('routeAnimation', [
+      transition('* <=> *', [        
+        query(':enter, :leave', style({ /*position: 'fixed', width:'100%'*/ }), { optional: true }),        
+        group([  
+          query(':enter', [
+            stagger(100, [
+              style({ opacity: 0 }),
+              animate('0.3s ease-in-out', style({ opacity: 1 }))
+            ])
+          ], { optional: true }),
+          /*query(':leave', [
+            style({ opacity: 1 }),
+            animate('0.5s ease-in-out', style({ opacity: 0 }
+          ], { optional: true }) */
+        ])
+      ])     
+    ])
+  ]
+ 
+}) 
 export class AppComponent {
   title = 'AngularFrontend';
-  display : boolean = false;
+  state : boolean = false;
   constructor(){}
   
   ngOnInit(){
   	 
-  }
-  toggleDisplay(){
-  	this.display ? this.display = false : this.display = true;  	 
+  }  
+
+  getDepth(outlet){
+    return outlet.activatedRouteData.state;
   }
 }

@@ -14,10 +14,10 @@
   <h1>< Angular<span>FrontEND </span>/></h1>
 
 </div>
-<div class="content">
-  <div class="mascara">    
-    <router-outlet></router-outlet>
-  </div>
+<div id="page" class="content" [@routeAnimation]="getDepth(myOutlet)"> 
+       
+    <router-outlet #myOutlet="outlet"></router-outlet>
+ 
 </div>
 
 <!-- sidenav -->

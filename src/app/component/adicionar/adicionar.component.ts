@@ -131,6 +131,7 @@ export class AdicionarComponent implements OnInit {
 
   maxDateFunction(value){
     this.maxDate = new Date(value);
+    this.itemTemp.fab=''; 
   }
   /* Função que altera o valor do input Quantidade adicionando sufixo 'l', 'Kg', 'Un' */  
   parametroUm(novovalor){
