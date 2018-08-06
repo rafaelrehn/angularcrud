@@ -5,23 +5,6 @@ import { trigger, style, animate, transition, query, group, state,stagger } from
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  /*animations: [
-    trigger('routeAnimation', [
-      transition('* <=> *', [        
-        query(':enter, :leave', style({ position: 'fixed', width:'100%' }), { optional: true }),        
-        group([  
-          query(':enter', [
-            style({ transform: 'translateX(100%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-          ], { optional: true }),
-          query(':leave', [
-            style({ transform: 'translateX(0%)' }),
-            animate('0.5s ease-in-out', style({ transform: 'translateX(200%)' }
-          ], { optional: true })
-        ])
-      ])     
-    ])
-  ]*/
 animations: [
     trigger('routeAnimation', [
       transition('* <=> *', [        
@@ -46,11 +29,17 @@ animations: [
 export class AppComponent {
   title = 'AngularFrontend';
   state : boolean = false;
+  display: boolean = false;
   constructor(){}
   
   ngOnInit(){
   	 
   }  
+
+  toggleDisplay(){
+    this.display = !this.display;
+    console.log(this.display);
+  }
 
   getDepth(outlet){
     return outlet.activatedRouteData.state;
