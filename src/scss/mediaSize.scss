@@ -1,0 +1,46 @@
+@import 'colors';
+
+
+@media screen and (max-width: 640px) {
+	.header{
+		h1{			
+			padding: 2px !important;
+			letter-spacing: 3px !important;
+			font-size: 18px !important;
+			padding-top: 17px !important;
+		}
+	}
+    .sidebar{
+    	display: none;
+    }
+    .content{
+    	margin-left: 20px !important;
+
+    	.btn-warning{
+    		padding-right: 0px !important;
+    	}
+
+    	.mascara{
+			padding: 0.3em !important;
+		}
+
+		h5{
+			padding-bottom: 1.5em;
+		}
+		h3{
+			margin-top: -30px;
+		}
+    }
+
+    .hide-small{
+    	display: none;
+    }
+
+    .brand-icon{
+    	display: none;
+    }
+    .brand-menu{
+    	display: initial !important;
+    }
+
+}

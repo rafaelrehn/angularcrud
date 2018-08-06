@@ -1,7 +1,7 @@
 <div class="sidebar">
   <ul>
-    <li routerLink="/dashboard" routerLinkActive="active"><span class="fa fa-dashboard"></span> Dashboard</li>
-    <li routerLink="editar-item" routerLinkActive="active"><span class="fa fa-server"></span> Listar Itens</li>
+    <li routerLink="dashboard" routerLinkActive="active"><span class="fa fa-dashboard"></span> Dashboard</li>
+    <li routerLink="listar-item" routerLinkActive="active"><span class="fa fa-server"></span> Listar Itens</li>
     <li routerLink="adicionar-item" routerLinkActive="active"><span class="fa fa-edit"></span> Editar Itens</li>
     <li><span class="fa fa-exclamation-triangle"></span> Notworking</li>
     <li><span class="fa fa-exclamation-triangle"></span> Notworking</li>
@@ -10,11 +10,21 @@
   </ul>
 </div>
 <div class="header">
-  <h2 class="brand">#</h2>
+  <h2 class="brand"><span class="brand-icon">#</span><span class="brand-menu"><span (click)="toggleDisplay()" class="fa fa-navicon"></span></span></h2>
   <h1>< Angular<span>FrontEND </span>/></h1>
+
 </div>
 <div class="content">
-  <div class="mascara">
+  <div class="mascara">    
     <router-outlet></router-outlet>
   </div>
 </div>
+
+<!-- sidenav -->
+<div *ngIf="display" class="sidenav">
+  <span (click)="toggleDisplay()">&times;</span>
+  <a routerLink="dashboard" (click)="toggleDisplay()"><span class="fa fa-dashboard"></span> Dashboard</a>
+  <a routerLink="listar-item" (click)="toggleDisplay()"><span class="fa fa-server"></span> Listar Itens</a>
+  <a routerLink="adicionar-item" (click)="toggleDisplay()"><span class="fa fa-edit"></span> Editar Itens</a>
+</div>
+<!-- end sidenav -->

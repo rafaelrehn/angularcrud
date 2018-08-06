@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularFrontend';
+  display : boolean = false;
+  constructor(){}
+  
+  ngOnInit(){
+  	 
+  }
+  toggleDisplay(){
+  	this.display ? this.display = false : this.display = true;  	 
+  }
 }

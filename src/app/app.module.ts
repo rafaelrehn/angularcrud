@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-
+import { DataService } from './data.service';
+ 
 /* PrimeNG component */
 import { ButtonModule} from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -19,6 +20,12 @@ import { SpinnerModule } from 'primeng/spinner';
 /* CurrencyMaskModule */
 //npm install ng2-currency-mask --save
 import { CurrencyMaskModule } from "ng2-currency-mask";
+
+/* Bibliotecas para o currency pipe */
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+registerLocaleData(ptBr);
 
 /* APP Components */
 import { ListarComponent } from './component/listar/listar.component';
@@ -48,7 +55,10 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
     ListboxModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    DataService,
+    {provide: LOCALE_ID, useValue: 'pt-BR'} // Providers currency pipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

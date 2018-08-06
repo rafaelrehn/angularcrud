@@ -1,48 +1,64 @@
-<h5>Dashboard > Items > Listar</h5>
+<h5>Dashboard > Itens > Listar</h5>
 <h3>Lista de items: {{ itemCount }} registro(s).</h3>
 <div id="addButton" routerLink="/adicionar-item">
 	<span class="fa fa-plus"></span>
 </div>
+
+<span *ngIf="alerta">
+	<div class="modal">
+	  	<div class="modal-content">
+	    	<span class="close" (click)="alerta=false">&times;</span>
+	    	<p>Excluir Registro {{ varRegistro }} ? </p>
+	    	<button class="btn btn-primary" (click)="alerta=false">Cancelar</button>
+			<button class="btn btn-danger" (click)="deleteItem()" >Excluir</button>
+	  	</div>
+	</div>  
+</span>
+
 <table class="table">
 	<tr>
 		<th>ID</th>
 		<th>Nome</th>
-		<th>U.M.</th>
-		<th>Valor</th>
-		<th>Perecível</th>
-		<th>Data val.</th>
-		<th>Data fab.</th>
+		<th class="hide-small">U.M.</th>
+		<th class="hide-small">Quantidade</th>
+		<th class="hide-small">Valor</th>
+		<th class="hide-small">Perecível</th>
+		<th class="hide-small">Data val.</th>
+		<th class="hide-small">Data fab.</th>
 		<th>Ações</th>
-	</tr>
-	<tr *ngFor="let item of items">
+	</tr>	
+	<tr *ngFor="let item of items; let index = index">
 		<td>
 			{{item.id}}
 		</td>
 		<td>
-			{{item.nome}}
+			{{item.nome}} 
 		</td>
-		<td>
+		<td class="hide-small">
 			{{item.um}}
 		</td>
-		<td>
-			{{item.valor | number:'1.0-2'}}
+		<td class="hide-small">
+			{{item.qtd}}
 		</td>
-		<td>
+		<td class="hide-small">
+			{{item.valor | currency:'BRL'}}
+		</td>
+		<td class="hide-small">
 		  <span 
 		    *ngIf="item.perecivel != null"
 		    [style.color]="item.perecivel == 'Sim' ? 'red' : 'green' ">
 		      {{item.perecivel}}
 		  </span>
 		</td>
-		<td>
+		<td class="hide-small">
 			{{item.val}}
 		</td>
-		<td>
+		<td class="hide-small">
 			{{item.fab}}
 		</td>
 		<td>
-			<button class="btn btn-warning">Editar</button>
-			<button class="btn btn-danger">Excluir</button>
+			<button class="btn btn-warning" routerLink="/adicionar-item/{{item.id}}">Editar</button>
+			<button class="btn btn-danger" (click)="deleteModal(index)">Excluir</button>
 		</td>
 	</tr>
 </table>

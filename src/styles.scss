@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:800|Roboto');
-@import 'table';
-@import 'buttons';
-@import 'colors';
+@import 'scss/table';
+@import 'scss/buttons';
+@import 'scss/colors';
+@import 'scss/modal';
+@import 'scss/mediaSize';
+@import 'scss/sidenav';
 
 body, html{
 	background: #f2f2f2;
@@ -36,6 +39,9 @@ body, html{
 		font-weight: 800;
 		color: $green;
 	}
+	.brand-menu{
+		display: none;
+	}
 	h1{
 		font-family: 'Barlow Condensed', sans-serif;
 		color: white;
@@ -49,8 +55,9 @@ body, html{
 			color: $color5;
 		}	
 	}
-
 }
+
+	
 .sidebar{
 	padding-top: 62px;
 	position: fixed;
@@ -100,7 +107,7 @@ body, html{
 		color: $color3;
 	}
 	.mascara{
-		background-color: white; min-height: 100%; padding: 2em; border-radius: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+		background-color: white; min-height: 100%; padding: 2em; border-radius: 10px; box-shadow: 2px 2px 4px rgba(0,0,0,.3); margin-bottom: 20px;
 	}
 }
 
@@ -111,7 +118,7 @@ body, html{
 	width: 60px;
 	height: 60px;
 	text-align: center;
-	
+	z-index: 999;
 	font-size: 32px;	
 	color: white;	
 	position: fixed;
@@ -129,4 +136,35 @@ body, html{
 		/* transform: scale(1.1); */
 
 	}
+}
+
+
+
+/* colors validation form */
+.ng-valid[required], .ng-valid.required{
+	.ui-dropdown,input{
+		border-left: 5px solid #42A948; /* green */
+	}	
+}
+.ng-invalid:not(form){
+	.ui-dropdown,input{
+		border-left: 5px solid orange; /* orange */
+	}	
+}
+div#inputNome.ui-g-12.ui-md-8.ui-fluid input.ng-untouched.ng-pristine.ui-inputtext.ui-corner-all.ui-state-default.ui-widget.ng-invalid,
+div#inputQtd.ui-g-12.ui-md-8.ui-fluid input.ng-untouched.ng-pristine.ui-inputtext.ui-corner-all.ui-state-default.ui-widget.ng-invalid,
+div#itemValor.ui-g-12.ui-md-8.ui-fluid input.ng-untouched.ng-pristine.ui-inputtext.ui-corner-all.ui-state-default.ui-widget.ng-invalid{
+	border-left: 5px solid orange; /* orange */
+}
+div#inputNome.ui-g-12.ui-md-8.ui-fluid input.ui-inputtext.ui-corner-all.ui-state-default.ui-widget.ng-dirty.ng-valid.ui-state-filled.ng-touched,
+div#inputQtd.ui-g-12.ui-md-8.ui-fluid input.ui-inputtext.ui-corner-all.ui-state-default.ui-widget.ng-dirty.ng-valid.ui-state-filled.ng-touched,
+div#itemValor.ui-g-12.ui-md-8.ui-fluid input.ui-inputtext.ui-corner-all.ui-state-default.ui-widget.ng-dirty.ng-valid.ui-state-filled.ng-touched{
+	border-left: 5px solid #42A948; /* green */
+}
+
+
+
+/* bug de border bottom prime ng */
+.ui-inputtext.ng-dirty.ng-invalid, p-dropdown.ng-dirty.ng-invalid > .ui-dropdown, p-autocomplete.ng-dirty.ng-invalid > .ui-autocomplete > .ui-inputtext, p-calendar.ng-dirty.ng-invalid > .ui-calendar > .ui-inputtext, p-chips.ng-dirty.ng-invalid > .ui-inputtext, p-inputmask.ng-dirty.ng-invalid > .ui-inputtext, p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box, p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box, p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch, p-listbox.ng-dirty.ng-invalid .ui-inputtext, p-multiselect.ng-dirty.ng-invalid > .ui-multiselect, p-spinner.ng-dirty.ng-invalid > .ui-inputtext, p-selectbutton.ng-dirty.ng-invalid .ui-button, p-togglebutton.ng-dirty.ng-invalid .ui-button {
+    border-bottom-color: #c0c0c0;
 }
