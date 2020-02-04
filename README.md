@@ -1,3 +1,3 @@
 # Dfe
 Angular CRUD
-https://tjolex.github.io/angularcrud
+https://rafaelrehn.github.io/angularcrud
