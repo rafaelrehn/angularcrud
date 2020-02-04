@@ -2,4 +2,4 @@
 Angular CRUD
 https://rafaelrehn.github.io/angularcrud
 
-Pequeno projeto modelo em angular
+Pequeno projeto modelo em desenvolvido com angular utilizando biblioteca UI PrimeNG
